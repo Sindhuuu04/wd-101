@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1A202C; /* Dark background color */
+      color: #E2E8F0; /* Text color */
+    }
+
+    .form-container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #2D3748; /* Form background color */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #A0AEC0; /* Label text color */
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 4px;
+      border: 1px solid #CBD5E0; /* Input field border */
+      background-color: #4A5568; /* Input field background color */
+      color: #E2E8F0; /* Input field text color */
+      font-size: 14px;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #38A169; /* Focused input field border color */
+    }
+
+    .checkbox-field {
+      margin-right: 6px;
+    }
+
+    .submit-button {
+      padding: 8px 16px;
+      margin-top: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #38A169; /* Submit button background color */
+      color: #E2E8F0; /* Submit button text color */
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .submit-button:hover {
+      background-color: #2C7A7B; /* Hover background color */
+    }
+
+    .entries-container {
+      margin-top: 30px;
+      padding: 16px;
+      background-color: #2D3748; /* Entries container background color */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .entries-header {
+      font-size: 20px;
+      font-weight: 600;
+      color: #A0AEC0; /* Entries header text color */
+      margin-bottom: 12px;
+    }
+
+    .user-entry {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2 class="text-2xl text-center font-bold entries-header mb-3">
+      REGISTRATION FORM
+    </h2>
+    <form id="user-form" class="space-y-4">
+      <div>
+        <label for="name" class="block text-sm font-medium form-label">
+          Name
+        </label>
+        <input required type="text" id="name" name="name" class="input-field" placeholder="Full name">
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium form-label">
+          Email
+        </label>
+        <input required type="email" id="email" name="email" class="input-field" placeholder="Email address">
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium form-label">
+          Password
+        </label>
+        <input required type="password" id="password" name="password" class="input-field" placeholder="Password">
+      </div>
+
+      <div>
+        <label for="dob" class="block text-sm font-medium form-label">
+          Date of Birth
+        </label>
+        <input required type="date" id="dob" name="dob" class="input-field">
+      </div>
+
+      <div class="flex items-center">
+        <input required type="checkbox" id="acceptTerms" name="acceptTerms" class="checkbox-field">
+        <label for="acceptTerms" class="ml-2 block text-sm font-medium form-label">
+          Accept Terms & Conditions
+        </label>
+      </div>
+
+      <p class="text-red-500 font-medium hidden" id="error"></p>
+      <button type="submit" class="submit-button">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <div class="entries-container">
+    <h2 class="text-lg text-center font-bold entries-header mb-1">
+      Entries
+    </h2>
+    <div id="user-entries"></div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
